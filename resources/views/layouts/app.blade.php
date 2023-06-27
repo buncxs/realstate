@@ -1,36 +1,84 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<html lang="en">
 
-        <!-- Fonts -->
-        {{-- <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="NobleUI">
+    <meta name="keywords"
+        content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <title>NobleUI - HTML Bootstrap 5 Admin Dashboard Template</title>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- End fonts -->
 
-            <!-- Page Content -->
-            <main>
+    <!-- core:css -->
+    <link rel="stylesheet" href="{{ asset('../assets/vendors/core/core.css') }}">
+    <!-- endinject -->
+
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('../assets/vendors/flatpickr/flatpickr.min.css') }}">
+    <!-- End plugin css for this page -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('../assets/fonts/feather-font/css/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
+    <!-- endinject -->
+
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{{ asset('../assets/css/demo2/style.css') }}">
+    <!-- End layout styles -->
+
+    <link rel="shortcut icon" href="{{ asset('../assets/images/favicon.png') }}" />
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- partial:partials/_sidebar.html -->
+        <x-admin.sidebar />
+        <!-- partial -->
+
+        <div class="page-wrapper">
+            <!-- partial:partials/_navbar.html -->
+            <x-admin.navbar />
+            <!-- partial -->
+
+            <div class="page-content">
                 {{ $slot }}
-            </main>
+            </div>
+
+            <!-- partial:partials/_footer.html -->
+            <x-admin.footer />
+            <!-- partial -->
         </div>
-    </body>
+    </div>
+
+    <!-- core:js -->
+    <script src="{{ asset('../assets/vendors/core/core.js') }}"></script>
+    <!-- endinject -->
+
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('../assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('../assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
+    <!-- End plugin js for this page -->
+
+    <!-- inject:js -->
+    <script src="{{ asset('../assets/vendors/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('../assets/js/template.js') }}"></script>
+    <!-- endinject -->
+
+    <!-- Custom js for this page -->
+    <script src="{{ asset('../assets/js/dashboard-dark.js') }}"></script>
+    <!-- End custom js for this page -->
+
+</body>
+
 </html>
