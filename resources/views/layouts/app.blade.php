@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
-    <meta name="author" content="NobleUI">
-    <meta name="keywords"
-        content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
     <title>Realstate</title>
 
@@ -31,9 +28,9 @@
     <link rel="stylesheet" href="{{ asset('/assets/fonts/feather-font/css/iconfont.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <!-- endinject -->
-
+    @stack('head')
     <!-- Layout styles -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/demo2/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/demo1/style.css') }}">
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" />
@@ -76,9 +73,9 @@
     <!-- endinject -->
 
     <!-- Custom js for this page -->
-    <script src="{{ asset('/assets/js/dashboard-dark.js') }}"></script>
+    <script src="{{ asset('/assets/js/dashboard-light.js') }}"></script>
     <!-- End custom js for this page -->
-
+    @stack('scripts')
 </body>
 
 </html>
