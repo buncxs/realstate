@@ -1,6 +1,6 @@
 <x-app-layout>
     @push('head')
-        <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/assets/js/jquery.js') }}"></script>
     @endpush
     <div class="row profile-body">
         <!-- left wrapper start -->
@@ -10,7 +10,7 @@
                     <div class="d-flex flex-column align-items-center justify-content-center mb-2">
                         <div>
                             <img class="wd-80 rounded-circle"
-                                src="{{ isset($user->photo) ? Storage::url($user->photo) : Storage::url('user/no_image.jpg') }}"
+                                src="{{ isset($user->photo) ? Storage::url($user->photo) : Storage::url('users/no_image.jpg') }}"
                                 alt="profile">
                         </div>
                         <h4 class="h4 mt-2">{{ $user->username }}</h4>
@@ -54,7 +54,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Basic Form</h6>
-                        <form action="{{ route('profile.update', $user) }}" method="POST" class="forms-sample">
+                        <form action="{{ route('profile.update', $user) }}" method="POST" class="forms-sample"
+                        enctype="multipart/form-data">
                             @method('patch')
                             @csrf
                             <div class="mb-3">
@@ -88,17 +89,16 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="photo">photo</label>
-                                <input class="form-control" type="file" name="photo">
+                                <input class="form-control" type="file" name="photo" id="photo">
                                 <x-input-error :messages="$errors->get('photo')" class="mt-2" />
                             </div>
                             <div class="mb-3">
                                 <img id="showPhoto" class="wd-80 ht-80 object-fit-cover block rounded-circle"
-                                    src="{{ isset($user->photo) ? Storage::url($user->photo) : Storage::url('user/no_image.jpg') }}"
+                                    src="{{ isset($user->photo) ? Storage::url($user->photo) : Storage::url('users/no_image.jpg') }}"
                                     alt="profile">
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Save Changes</button>
                         </form>
-
                     </div>
                 </div>
             </div>
