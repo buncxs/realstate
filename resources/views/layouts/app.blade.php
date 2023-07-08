@@ -33,6 +33,10 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/demo1/style.css') }}">
     <!-- End layout styles -->
 
+    <!-- Toaster styles -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/toaster.css') }}">
+    <!-- End Toaster styles -->
+
     <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" />
 </head>
 
@@ -75,6 +79,36 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('/assets/js/dashboard-light.js') }}"></script>
     <!-- End custom js for this page -->
+
+    <!-- Toaster styles -->
+    <script src="{{ asset('/assets/js/toaster.js') }}"></script>
+    <!-- End Toaster styles -->
+
+    <!-- Toaster messages -->
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
+    <!-- End Toaster messages -->
+
     @stack('scripts')
 </body>
 
