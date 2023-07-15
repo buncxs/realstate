@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,14 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', [ClientController::class, 'index'])->name('client.index');
 
-
-Route::get('/new-stuff', function () {
-  return 'this is something';
-});
 
 Route::get('/dashboard', function () {
   return view('dashboard');
@@ -44,5 +37,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::middleware(['auth', 'role:agent'])->group(function () {
   Route::get('/agent', [AgentController::class, 'index'])->name('agent.index');
 }); // End Group Agent Middleware
+
+
 
 require __DIR__ . '/auth.php';

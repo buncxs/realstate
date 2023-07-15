@@ -78,7 +78,7 @@
         <!-- Show Photo -->
         <div class="mb-3">
             <img id="showPhoto" class="wd-80 ht-80 object-fit-cover block rounded-circle"
-                src="{{ isset($user->photo) ? Storage::url($user->photo) : Storage::url('no_image.jpg') }}"
+                src="{{ isset($user->profile_photo_path) ? Storage::url($user->profile_photo_path) : Storage::url('no_image.jpg') }}"
                 alt="profile">
         </div>
 

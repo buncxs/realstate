@@ -1,8 +1,4 @@
 <x-app-layout>
-    {{-- @push('head')
-        <script type="text/javascript" src="{{ asset('/assets/js/jquery.js') }}"></script>
-    @endpush
- --}}
     <div class="col-md-12 col-xl-12">
         <div class="row mb-4">
             <div class="card shadow">

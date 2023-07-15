@@ -19,7 +19,7 @@ class ProfileUpdateRequest extends FormRequest
       'name' => ['string', 'max:255'],
       'username' => ['required', 'string', 'min:5', 'max:255'],
       'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-      'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+      'profile_photo_path' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
       'phone' =>  ['regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10'],
       'address' => ['required'],
     ];
