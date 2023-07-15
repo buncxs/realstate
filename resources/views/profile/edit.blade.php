@@ -1,8 +1,8 @@
 <x-app-layout>
-    @push('head')
+    {{-- @push('head')
         <script type="text/javascript" src="{{ asset('/assets/js/jquery.js') }}"></script>
     @endpush
-
+ --}}
     <div class="col-md-12 col-xl-12">
         <div class="row mb-4">
             <div class="card shadow">
@@ -29,7 +29,7 @@
       -->
     </div>
     @push('scripts')
-        <script type="text/javascript">
+        <script type="module">
             $(document).ready(function() {
                 $('#photo').change(function(e) {
                     var reader = new FileReader();

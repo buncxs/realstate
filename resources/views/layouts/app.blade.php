@@ -9,11 +9,9 @@
     <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
 
     <title>Realstate</title>
-
-    <!-- End fonts -->
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
-    <!-- endinject -->
     @stack('head')
    
     <link rel="shortcut icon" href="{{ asset('/assets/images/favicon.png') }}" />
@@ -42,7 +40,7 @@
     </div>
 
     <!-- Toaster messages -->
-    <script>
+    <script type="module">
         @if (Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}"
             switch (type) {
