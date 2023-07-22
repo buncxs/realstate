@@ -15,26 +15,26 @@
     <!-- End fonts -->
 
     <!-- core:css -->
-    <link rel="stylesheet" href="{{ asset('../assets/vendors/admin/core/core.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendors/core/core.css') }}">
     <!-- endinject -->
 
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('../assets/vendors/admin/flatpickr/flatpickr.min.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendors/flatpickr/flatpickr.min.css') }}">
+
     <!-- End plugin css for this page -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('../assets/fonts/admin/feather-font/css/iconfont.css') }} ">
-    <link rel="stylesheet" href="{{ asset('../assets/vendors/admin/flag-icon-css/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/fonts/feather-font/css/iconfont.css') }} ">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <!-- endinject -->
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="{{ asset('../assets/css/admin/demo1/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/demo1/style.css') }}">
     <!-- End layout styles -->
 
-    <link rel="stylesheet" href="{{ asset('../assets/vendors/admin/toastr/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendors/toastr/toastr.css') }}">
 
-    <link rel="shortcut icon" href="{{ asset('../assets/images/admin/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.png') }}" />
 
     @stack('head')
 
@@ -63,27 +63,27 @@
     </div>
 
     <!-- jquery:js -->
-    <script src="{{ asset('../assets/js/admin/jquery.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/jquery.js') }}"></script>
     <!-- endinject -->
 
     <!-- core:js -->
-    <script src="{{ asset('../assets/vendors/admin/core/core.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendors/core/core.js') }}"></script>
     <!-- endinject -->
 
     <!-- Plugin js for this page -->
-    <script src="{{ asset('../assets/vendors/admin/flatpickr/flatpickr.min.js') }}"></script>
-    <script src="{{ asset('../assets/vendors/admin/apexcharts/apexcharts.min.js') }}"></script>
-    
+    <script src="{{ asset('assets/admin/vendors/flatpickr/flatpickr.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendors/apexcharts/apexcharts.min.js') }}"></script>
+
     <!-- End plugin js for this page -->
 
     <!-- inject:js -->
-    <script src="{{ asset('../assets/vendors/admin/feather-icons/feather.min.js') }}"></script>
-    <script src="{{ asset('../assets/js/admin/template.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendors/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/template.js') }}"></script>
     <!-- endinject -->
 
     <!-- Custom js for this page -->
-    <script src="{{ asset('../assets/js/admin/dashboard-light.js') }}"></script>
-    <script src="{{ asset('../assets/vendors/admin/toastr/toastr.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/dashboard-light.js') }}"></script>
+    <script src="{{ asset('assets/admin/vendors/toastr/toastr.js') }}"></script>
     <!-- End custom js for this page -->
 
     <!-- Toaster messages -->

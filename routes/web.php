@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ClientController::class, 'index'])->name('client.index');
 
-
 Route::get('/dashboard', function () {
   return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -38,6 +37,8 @@ Route::middleware(['auth', 'role:agent'])->group(function () {
   Route::get('/agent', [AgentController::class, 'index'])->name('agent.index');
 }); // End Group Agent Middleware
 
-
+Route::middleware(['auth', 'role:user'])->group(function () {
+  Route::get('/dashboard', [ClientController::class, 'dashboard'])->name('dashboard');
+}); // End Group User Middleware
 
 require __DIR__ . '/auth.php';

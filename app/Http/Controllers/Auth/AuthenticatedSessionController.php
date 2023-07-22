@@ -21,6 +21,14 @@ class AuthenticatedSessionController extends Controller
   }
 
   /**
+   * Display the Signin view.
+   */
+  public function signin(): View
+  {
+    return view('frontend.signin');
+  }
+
+  /**
    * Handle an incoming authentication request.
    */
   public function store(LoginRequest $request): RedirectResponse
