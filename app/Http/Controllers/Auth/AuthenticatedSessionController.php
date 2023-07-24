@@ -37,7 +37,14 @@ class AuthenticatedSessionController extends Controller
 
     $request->session()->regenerate();
 
-    return redirect()->intended($this->role($request));
+    $username = $request->user()->username;
+
+    $notification = array(
+      'message' =>  'User ' . $username . ' Login succesfully',
+      'alert-type'  =>  'info'
+    );
+
+    return redirect()->intended($this->role($request))->with($notification);
   }
 
   /**
@@ -51,7 +58,12 @@ class AuthenticatedSessionController extends Controller
 
     $request->session()->regenerateToken();
 
-    return redirect('/');
+    $notification = array(
+      'message' =>  'User Logout succesfully',
+      'alert-type'  =>  'info'
+    );
+
+    return redirect('/')->with($notification);
   }
 
   protected function role(LoginRequest $request): string
@@ -61,7 +73,7 @@ class AuthenticatedSessionController extends Controller
     } elseif ($request->user()->role === 'agent') {
       return '/agent';
     } else {
-      return '/dashboard';
+      return '/user/dashboard';
     }
   }
 }

@@ -1,4 +1,11 @@
 <x-app-layout>
+
+    @push('head')
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="{{ asset('assets/admin/vendors/flatpickr/flatpickr.min.css') }}">
+        <!-- End plugin css for this page -->
+    @endpush
+
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
             <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
@@ -410,4 +417,13 @@
             </div>
         </div>
     </div> <!-- row -->
+
+    @push('scripts')
+        <!-- Plugin js for this page -->
+        <script src="{{ asset('assets/admin/vendors/flatpickr/flatpickr.min.js') }}"></script>
+        <script src="{{ asset('assets/admin/vendors/apexcharts/apexcharts.min.js') }}"></script>
+        <!-- End plugin js for this page -->
+    @endpush
+
+
 </x-app-layout>

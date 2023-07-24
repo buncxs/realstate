@@ -9,7 +9,7 @@
     <title>Realshed - HTML 5 Template Preview</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/frontend/images/favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link
@@ -29,6 +29,7 @@
     <link href="{{ asset('assets/frontend/css/switcher-style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/common/vendors/toastr/toastr.css') }}" rel="stylesheet" >
 
     @stack('head')
 </head>
@@ -75,6 +76,12 @@
 
     <!-- main-js -->
     <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
+    <script src="{{ asset('assets/common/vendors/toastr/toastr.js') }}"></script>
+
+
+    <!-- Toaster messages -->
+    @include('snippets.toastr')
+    <!-- End Toaster messages -->
 
     @stack('scripts')
 

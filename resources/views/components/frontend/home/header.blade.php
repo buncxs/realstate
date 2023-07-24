@@ -17,8 +17,21 @@
                     <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
                     <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
                 </ul>
-                <div class="sign-box">
-                    <a href="{{ route('signin') }}"><i class="fas fa-user"></i>Sign In</a>
+                <div class="sign-box d-flex">
+                    @auth
+                        <a href="{{ route('user.dashboard') }}" class="mr-4"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                <i class="fas fa-user"></i>
+                                Logout
+                            </a>
+                        </form>
+                    @else
+                        <a href="{{ route('signin') }}"><i class="fas fa-user"></i>Sign In</a>
+                    @endauth
                 </div>
             </div>
         </div>
@@ -28,7 +41,7 @@
         <div class="outer-box">
             <div class="main-box">
                 <div class="logo-box">
-                    <figure class="logo"><a href="index.html"><img
+                    <figure class="logo"><a href="{{ route('user.index') }}"><img
                                 src="{{ asset('assets/frontend/images/logo.png') }}" alt=""></a>
                     </figure>
                 </div>
@@ -107,7 +120,7 @@
                                                     </li>
                                                     <li><a href="gallery.html">Our Gallery</a></li>
                                                     <li><a href="profile.html">My Profile</a></li>
-                                                    <li><a href="{{ route('signin') }}">Sign In</a></li>
+                                                    <li><a href="#">Sign In</a></li>
                                                     <li><a href="signup.html">Sign Up</a></li>
                                                     <li><a href="error.html">404</a></li>
                                                     <li><a href="agents-list.html">Agents List</a></li>

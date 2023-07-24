@@ -44,7 +44,7 @@ class ProfileController extends Controller
       'alert-type'  =>  'success'
     );
 
-    return Redirect::route('profile.edit')->with($notification);
+    return redirect()->back()->with($notification);
   }
 
   /**
@@ -67,4 +67,6 @@ class ProfileController extends Controller
 
     return Redirect::to('/');
   }
+
+
 }
