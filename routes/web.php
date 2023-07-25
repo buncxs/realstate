@@ -40,9 +40,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::post('', 'store')->name('store');
+    Route::get('{category}/edit', 'edit')->name('edit');
+    Route::patch('{category}', 'update')->name('update');
+    Route::delete('{category}', 'destroy')->name('destroy');
   });
   // End Categories Group
-
 
 
 }); // End Group Admin Middleware

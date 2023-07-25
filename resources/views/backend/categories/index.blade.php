@@ -34,8 +34,16 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->icon }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('categories.edit', $category) }}" class="btn btn-warning">
+                                                Edit
+                                            </a>
+                                            <form class="d-inline-block"
+                                                action="{{ route('categories.destroy', $category) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger show_confirm"
+                                                    id="submitForm">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

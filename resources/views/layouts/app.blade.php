@@ -28,6 +28,7 @@
     <!-- End layout styles -->
 
     <link rel="stylesheet" href="{{ asset('assets/common/vendors/toastr/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/common/vendors/sweetalert2/sweetalert2.min.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('assets/admin/images/favicon.png') }}" />
 
@@ -69,10 +70,12 @@
     <script src="{{ asset('assets/admin/vendors/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/template.js') }}"></script>
     <!-- endinject -->
-    
+
     <script src="{{ asset('assets/admin/js/dashboard-light.js') }}"></script>
     <script src="{{ asset('assets/common/vendors/toastr/toastr.js') }}"></script>
-    
+    <script src="{{ asset('assets/common/vendors/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('assets/common/js/code.js') }}"></script>
+
     <!-- Toaster messages -->
     @include('snippets.toastr')
     <!-- End Toaster messages -->
