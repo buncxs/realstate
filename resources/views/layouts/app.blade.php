@@ -22,10 +22,12 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/fonts/feather-font/css/iconfont.css') }} ">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <!-- endinject -->
-
-    <!-- Layout styles -->
+    
+    <!-- Layout styles    -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/demo1/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.css') }}"> 
     <!-- End layout styles -->
+
 
     <link rel="stylesheet" href="{{ asset('assets/common/vendors/toastr/toastr.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/common/vendors/sweetalert2/sweetalert2.min.css') }}">

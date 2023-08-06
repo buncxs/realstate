@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\Backend\AmenityController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
@@ -45,6 +47,28 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('{category}', 'destroy')->name('destroy');
   });
   // End Categories Group
+
+  // Amenities Group
+  Route::name('amenities.')->prefix('amenities')->controller(AmenityController::class)->group(function () {
+    Route::get('', 'index')->name('index');
+    Route::get('create', 'create')->name('create');
+    Route::post('', 'store')->name('store');
+    Route::get('{amenity}/edit', 'edit')->name('edit');
+    Route::patch('{amenity}', 'update')->name('update');
+    Route::delete('{amenity}', 'destroy')->name('destroy');
+  });
+  // End Amenities Group
+
+  // Properties Group
+  Route::name('properties.')->prefix('properties')->controller(PropertyController::class)->group(function () {
+    Route::get('', 'index')->name('index');
+    Route::get('create', 'create')->name('create');
+    Route::post('', 'store')->name('store');
+    Route::get('{property}/edit', 'edit')->name('edit');
+    Route::patch('{property}', 'update')->name('update');
+    Route::delete('{property}', 'destroy')->name('destroy');
+  });
+  // End Properties Group
 
 
 }); // End Group Admin Middleware

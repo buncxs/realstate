@@ -18,15 +18,18 @@
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
+            <!-- RealState MENU -->
             <li class="nav-item nav-category">Realstate</li>
+
+            <!-- Categories MENU -->
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false"
-                    aria-controls="emails">
-                    <i class="link-icon" data-feather="mail"></i>
+                <a class="nav-link" data-bs-toggle="collapse" href="#categories" role="button" aria-expanded="false"
+                    aria-controls="categories">
+                    <i class="link-icon" data-feather="folder"></i>
                     <span class="link-title">Categories</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                 </a>
-                <div class="collapse" id="emails">
+                <div class="collapse" id="categories">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
                             <a href="{{ route('categories.index') }}" class="nav-link">All</a>
@@ -37,6 +40,49 @@
                     </ul>
                 </div>
             </li>
+            <!-- End Categories MENU -->
+
+            <!-- Amenities MENU -->
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#amenities" role="button" aria-expanded="false"
+                    aria-controls="amenities">
+                    <i class="link-icon" data-feather="folder"></i>
+                    <span class="link-title">Amenities</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="amenities">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('amenities.index') }}" class="nav-link">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/email/read.html" class="nav-link">Add</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- End Amenities MENU -->
+          
+            <!-- Properties MENU -->
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#properties" role="button" aria-expanded="false"
+                    aria-controls="properties">
+                    <i class="link-icon" data-feather="folder"></i>
+                    <span class="link-title">Properties</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="properties">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('properties.index') }}" class="nav-link">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/email/read.html" class="nav-link">Add</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- End Properties MENU -->
             
             <li class="nav-item">
                 <a href="pages/apps/calendar.html" class="nav-link">

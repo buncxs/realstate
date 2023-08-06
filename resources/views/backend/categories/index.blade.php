@@ -34,14 +34,14 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->icon }}</td>
                                         <td>
-                                            <a href="{{ route('categories.edit', $category) }}" class="btn btn-warning">
+                                            <a href="{{ route('categories.edit', $category) }}" class="btn btn-warning w-5">
                                                 Edit
                                             </a>
-                                            <form class="d-inline-block"
+                                            <form class="d-inline-block form-delete"
                                                 action="{{ route('categories.destroy', $category) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger show_confirm"
+                                                <button type="submit" class="btn btn-danger w-5"
                                                     id="submitForm">Delete</button>
                                             </form>
                                         </td>
@@ -60,6 +60,9 @@
         <script src="{{ asset('assets/admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
         <script src="{{ asset('assets/admin/vendors/datatables.net-bs5/dataTables.bootstrap5.js') }}"></script>
         <script src="{{ asset('assets/admin/js/data-table.js') }}"></script>
+
+        
+
         <!-- End plugin js for this page -->
     @endpush
 

@@ -52,7 +52,7 @@ class CategoryController extends Controller
   /**
    * Display the specified resource.
    */
-  public function show(PropertyType $propertyType)
+  public function show(Category $category)
   {
     //
   }
@@ -93,7 +93,7 @@ class CategoryController extends Controller
    */
   public function destroy(Category $category)
   {
-    //$category->delete();
+    $category->delete();
 
     $notification = array(
       'message' =>  'Category deleted succesfully',
